@@ -3,177 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mom's Kitchen - Digital Menu</title>
+    <title>Mom's Kitchen - Exclusive Menu</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
         :root {
-            --primary-color: #e74c3c;
-            --secondary-color: #f39c12;
-            --text-color: #2c3e50;
-            --bg-color: #f9f9f9;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --red: #c0392b;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background: #fffdf5; /* Creamish premium background */
             margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--dark);
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             color: white;
             text-align: center;
-            padding: 35px 20px;
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* 3D and Animation Effect for Restaurant Name */
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
+        /* 3D Animated Title */
+        h1 {
+            font-size: 3.5rem;
             text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: #ffffff;
-            /* 3D Shadow Effect */
-            text-shadow: 
-                0 1px 0 #ccc,
-                0 2px 0 #c5c5c5,
-                0 3px 0 #bbb,
-                0 4px 0 #b0b0b0,
-                0 5px 0 #a5a5a5,
-                0 6px 1px rgba(0,0,0,.1),
-                0 0 5px rgba(0,0,0,.1),
-                0 1px 3px rgba(0,0,0,.3),
-                0 3px 5px rgba(0,0,0,.2),
-                0 5px 10px rgba(0,0,0,.25),
-                0 10px 10px rgba(0,0,0,.2),
-                0 20px 20px rgba(0,0,0,.15);
-            /* Animation Trigger */
-            animation: pulse3d 3s ease-in-out infinite;
+            letter-spacing: 4px;
+            margin: 0;
+            color: var(--gold);
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+            animation: float 3s ease-in-out infinite;
         }
 
-        /* Smooth 3D Zooming Animation */
-        @keyframes pulse3d {
-            0% {
-                transform: scale(1);
-                text-shadow: 0 1px 0 #ccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbb, 0 4px 0 #b0b0b0, 0 5px 0 #a5a5a5, 0 10px 10px rgba(0,0,0,0.2);
-            }
-            50% {
-                transform: scale(1.05);
-                /* Shadow deepens when text pops out */
-                text-shadow: 0 2px 0 #ccc, 0 4px 0 #c5c5c5, 0 6px 0 #bbb, 0 8px 0 #b0b0b0, 0 10px 0 #a5a5a5, 0 15px 20px rgba(0,0,0,0.4);
-            }
-            100% {
-                transform: scale(1);
-                text-shadow: 0 1px 0 #ccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbb, 0 4px 0 #b0b0b0, 0 5px 0 #a5a5a5, 0 10px 10px rgba(0,0,0,0.2);
-            }
-        }
-
-        header p {
-            margin: 10px 0 0;
-            opacity: 0.9;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .info-tags {
-            margin-top: 12px;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 0 4px;
-            display: inline-block;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         .menu-container {
-            max-width: 750px;
-            margin: 20px auto;
-            padding: 0 15px;
+            max-width: 800px;
+            margin: -50px auto 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
         }
 
         .category-title {
-            color: var(--primary-color);
-            border-left: 5px solid var(--primary-color);
-            padding-left: 10px;
-            margin-top: 35px;
-            font-size: 1.4rem;
-            background: #fff;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            border-radius: 4px;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--red);
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            margin: 40px auto 20px;
+            width: 100%;
+            padding-bottom: 10px;
         }
 
-        .menu-items {
+        .menu-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 12px;
-        }
-
-        @media(min-width: 600px) {
-            .menu-items {
-                grid-template-columns: 1fr 1fr;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .item-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 15px;
             display: flex;
-            overflow: hidden;
+            align-items: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
         }
 
         .item-img {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
+            border-radius: 10px;
             object-fit: cover;
-            flex-shrink: 0;
-            background-color: #eaeaea;
+            margin-right: 15px;
         }
 
-        .item-content {
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
+        .item-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
         }
 
-        .item-details h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.05rem;
-            color: #2c3e50;
-        }
-
-        .item-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .item-price {
-            font-weight: bold;
-            color: white;
-            font-size: 1rem;
-            background: var(--primary-color);
-            padding: 3px 10px;
-            border-radius: 12px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #7f8c8d;
-            font-size: 0.85rem;
+        .price {
+            color: var(--red);
+            font-weight: 800;
+            margin-top: 5px;
+            display: block;
         }
     </style>
 </head>
@@ -181,270 +119,24 @@
 
     <header>
         <h1>Mom's Kitchen</h1>
-        <p>A Complete Family Restaurant & Fast Food</p>
-        <div class="info-tags">
-            <span class="tag">📍 Godargama, Bihar</span>
-            <span class="tag">⭐ Premium Quality</span>
-        </div>
+        <p>Fine Dining Experience</p>
     </header>
 
     <div class="menu-container">
-
-        <!-- Category: Starters & Pakoda -->
-        <h2 class="category-title">🥟 Pakoda & Starters</h2>
-        <div class="menu-items">
+        
+        <h2 class="category-title">🥟 Pakoda Special</h2>
+        <div class="menu-grid">
             <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Paneer_Pakora.jpg/320px-Paneer_Pakora.jpg" alt="पनीर पकौड़ा">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>पनीर पकौड़ा (Paneer Pakoda)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹149</span>
-                    </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Paneer_Pakora.jpg/320px-Paneer_Pakora.jpg" class="item-img" alt="Pakoda">
+                <div class="item-info">
+                    <h3>Paneer Pakoda</h3>
+                    <span class="price">₹149</span>
                 </div>
             </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Chicken_pakora_recipe.jpg/320px-Chicken_pakora_recipe.jpg" alt="चिकन पकौड़ा">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>चिकन पकौड़ा (Chicken Pakoda)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹169</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Bhaji_at_home.jpg/320px-Bhaji_at_home.jpg" alt="भेज पकौड़ा">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>भेज पकौड़ा (Veg Pakoda)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹79</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category: Main Course Heavy -->
-        <h2 class="category-title">🍲 Main Course & Paneer Special</h2>
-        <div class="menu-items">
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Mutton_Handi_by_m_bhardwaj.jpg/320px-Mutton_Handi_by_m_bhardwaj.jpg" alt="मटन हांडी">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>मटन हांडी (Mutton Handi)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹549</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kadai_Paneer_2.jpg/320px-Kadai_Paneer_2.jpg" alt="पनीर मसाला">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>पनीर मसाला (Paneer Masala)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹189</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Paneer_butter_masala_or_Cheese_butter_masala.jpg/320px-Paneer_butter_masala_or_Cheese_butter_masala.jpg" alt="पनीर बटर मसाला">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>पनीर बटर मसाला (Paneer Butter)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹199</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Chicken_Tikka_Masala_at_Shiva_Indian_Restaurant.jpg/320px-Chicken_Tikka_Masala_at_Shiva_Indian_Restaurant.jpg" alt="चिकन मसाला">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>चिकन मसाला (Chicken Masala)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹159</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category: Noodles & Chowmein -->
-        <h2 class="category-title">🍜 Chowmein Special</h2>
-        <div class="menu-items">
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Noodles_with_paneer.jpg/320px-Noodles_with_paneer.jpg" alt="पनीर चाउमीन">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>पनीर चाउमीन (Paneer Chowmein)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹75</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Hakkat_Noodles.jpg/320px-Hakkat_Noodles.jpg" alt="भेज चाउमीन">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>भेज चाउमीन (Veg Chowmein)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹59</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Egg_Noodles_In_India.jpg/320px-Egg_Noodles_In_India.jpg" alt="अंडा चाउमीन">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>अंडा चाउमीन (Egg Chowmein)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹69</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Chicken_Chow_Mein_by_Rudra.jpg/320px-Chicken_Chow_Mein_by_Rudra.jpg" alt="चिकन चाउमीन">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>चिकन चाउमीन (Chicken Chowmein)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹89</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category: Rolls -->
-        <h2 class="category-title">🌯 Delicious Rolls</h2>
-        <div class="menu-items">
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Kolkata_Egg_Roll.jpg/320px-Kolkata_Egg_Roll.jpg" alt="डबल अंडा रोल">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>डबल अंडा रोल (Double Egg Roll)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹39</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Chicken_Kathi_Roll_-_Kolkata.jpg/320px-Chicken_Kathi_Roll_-_Kolkata.jpg" alt="चिकन रोल">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>चिकन रोल (Chicken Roll)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹79</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Paneer_tikka_roll_india.jpg/320px-Paneer_tikka_roll_india.jpg" alt="पनीर रोल">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>पनीर रोल (Paneer Roll)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹49</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Chicken_Kathi_Roll_-_Kolkata.jpg/320px-Chicken_Kathi_Roll_-_Kolkata.jpg" alt="मिक्स रोल">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>मिक्स रोल (Mix Roll)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹89</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category: Rice & Biryani -->
-        <h2 class="category-title">🍚 Rice & Biryani</h2>
-        <div class="menu-items">
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Veg_Fried_Rice_Veg_Pulao.jpg/320px-Veg_Fried_Rice_Veg_Pulao.jpg" alt="भेज फ्राई राइस">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>भेज फ्राई राइस (Veg Fried Rice)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹69</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Jeera_Rice.jpg/320px-Jeera_Rice.jpg" alt="जीरा राइस">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>जीरा राइस (Jeera Rice)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹59</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Veg_Biryani_served_in_a_bowl.jpg/320px-Veg_Biryani_served_in_a_bowl.jpg" alt="भेज बिरयानी">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>भेज बिरयानी (Veg Biryani)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹149</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category: Indian Roti -->
-        <h2 class="category-title">🫓 Indian Roti</h2>
-        <div class="menu-items">
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indian_Tawa_Roti.jpg/320px-Indian_Tawa_Roti.jpg" alt="तवा रोटी">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>तवा रोटी (Tawa Roti)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹12</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item-card">
-                <img class="item-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indian_Tawa_Roti.jpg/320px-Indian_Tawa_Roti.jpg" alt="बटर रोटी">
-                <div class="item-content">
-                    <div class="item-details">
-                        <h3>बटर रोटी (Butter Roti)</h3>
-                    </div>
-                    <div class="item-meta">
-                        <span class="item-price">₹15</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Aur items aise hi add karein -->
         </div>
 
     </div>
-
-    <footer>
-        <p>&copy; Mom's Kitchen. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
