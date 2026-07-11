@@ -30,16 +30,54 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
+        /* 3D and Animation Effect for Restaurant Name */
         header h1 {
             margin: 0;
-            font-size: 2.3rem;
+            font-size: 3rem;
             text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            /* 3D Shadow Effect */
+            text-shadow: 
+                0 1px 0 #ccc,
+                0 2px 0 #c5c5c5,
+                0 3px 0 #bbb,
+                0 4px 0 #b0b0b0,
+                0 5px 0 #a5a5a5,
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+            /* Animation Trigger */
+            animation: pulse3d 3s ease-in-out infinite;
+        }
+
+        /* Smooth 3D Zooming Animation */
+        @keyframes pulse3d {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 1px 0 #ccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbb, 0 4px 0 #b0b0b0, 0 5px 0 #a5a5a5, 0 10px 10px rgba(0,0,0,0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                /* Shadow deepens when text pops out */
+                text-shadow: 0 2px 0 #ccc, 0 4px 0 #c5c5c5, 0 6px 0 #bbb, 0 8px 0 #b0b0b0, 0 10px 0 #a5a5a5, 0 15px 20px rgba(0,0,0,0.4);
+            }
+            100% {
+                transform: scale(1);
+                text-shadow: 0 1px 0 #ccc, 0 2px 0 #c5c5c5, 0 3px 0 #bbb, 0 4px 0 #b0b0b0, 0 5px 0 #a5a5a5, 0 10px 10px rgba(0,0,0,0.2);
+            }
         }
 
         header p {
-            margin: 5px 0 0;
+            margin: 10px 0 0;
             opacity: 0.9;
             font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .info-tags {
