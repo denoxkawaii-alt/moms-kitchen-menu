@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom's Kitchen - Digital Menu</title>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #ffa502;
+            --text-color: #2f3542;
+            --bg-color: #f1f2f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .info-tags {
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        @media(min-width: 600px) {
+            .menu-items {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .item-details h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .item-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #747d8c;
+        }
+
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            background: #ffeae2;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mom's Kitchen</h1>
+        <p>Ghar Jaisa Swad, Har Nivaale Mein!</p>
+        <div class="info-tags">
+            <span class="tag">📍 Godargama, Bihar</span>
+            <span class="tag">⏰ 9:00 AM - 10:00 PM</span>
+        </div>
+    </header>
+
+    <div class="menu-container">
+
+        <!-- Category: Starters -->
+        <h2 class="category-title">🥟 Starters & Pakoda</h2>
+        <div class="menu-items">
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=150&auto=format&fit=crop" alt="Paneer Pakoda">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Paneer Pakoda</h3>
+                        <p>Crispy & soft paneer deep fried</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹149</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=150&auto=format&fit=crop" alt="Chicken Pakoda">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Chicken Pakoda</h3>
+                        <p>Spicy crunchy chicken bites</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹169</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=150&auto=format&fit=crop" alt="Veg Pakoda">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Veg Pakoda</h3>
+                        <p>Assorted mixed veg fritters</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹79</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Chinese -->
+        <h2 class="category-title">🍜 Chowmein & Chinese</h2>
+        <div class="menu-items">
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=150&auto=format&fit=crop" alt="Paneer Chowmein">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Paneer Chowmein</h3>
+                        <p>Wok-tossed noodles with paneer</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹75</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=150&auto=format&fit=crop" alt="Egg Chowmein">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Egg Chowmein</h3>
+                        <p>Noodles tossed with scrambled eggs</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹69</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1617622141675-d3005b9067c5?w=150&auto=format&fit=crop" alt="Veg Chowmein">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Veg Chowmein</h3>
+                        <p>Classic street-style veg noodles</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹59</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Breads -->
+        <h2 class="category-title">🫓 Indian Breads</h2>
+        <div class="menu-items">
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=150&auto=format&fit=crop" alt="Butter Roti">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Butter Roti</h3>
+                        <p>Soft tawa roti with pure butter</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹15</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item-card">
+                <img class="item-img" src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=150&auto=format&fit=crop" alt="Tawa Roti">
+                <div class="item-content">
+                    <div class="item-details">
+                        <h3>Tawa Roti</h3>
+                        <p>Plain whole wheat home-style roti</p>
+                    </div>
+                    <div class="item-meta">
+                        <span class="item-price">₹12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mom's Kitchen. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
